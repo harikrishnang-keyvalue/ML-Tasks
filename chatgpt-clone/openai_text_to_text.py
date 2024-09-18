@@ -49,8 +49,3 @@ def get_openai_response(
     except Exception as e:
         print(f"Error getting response from the AI model: {e}")
         return None
-
-
-prompt = "What is the capital of France?"
-response = get_openai_response(prompt=prompt)
-print(response)
