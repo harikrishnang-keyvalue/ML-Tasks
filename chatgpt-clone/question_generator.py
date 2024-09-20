@@ -1,5 +1,5 @@
 import json
-import matplotlib.pyplot as plt
+import time
 
 from openai_text_to_text import get_openai_response
 from prompts import QUESTION_GENERATOR_PROMPT
@@ -8,9 +8,10 @@ prompt = QUESTION_GENERATOR_PROMPT
 
 question_generator_input = {
     "class": "3",
-    "topic": "Circles",
+    "topic": "Pie Charts",
     "skills": [
-        "Find area of composite figures made of circles and other shapes", "Given radius, find perimeter of a quadrant or semicircle", "Given number of turns & diameter, find distance travelled", "Given radius, find total area of quadrants or semicircles", "Given side of square, find area of the figure", "Given radius, find shaded area of the figure", "Find area for patterns involving circles and triangles", "Given perimeter, find area of a circle", "Find perimeter of composite figures made of circles and other shapes"
+        "Solve problem using data given in a Pie Chart, involving fractions",
+        "Solve problem using data given in a Pie Chart, involving percentage"
     ],
     "difficulties": [
         "A01",
@@ -35,9 +36,12 @@ question_generator_input = {
     }
 }
 
+start_time = time.time()
 response = get_openai_response(prompt.format(
     input=json.dumps(question_generator_input)))
-
+end_time = time.time()
+# print difference of time in seconds
+print(f"Time taken: {end_time - start_time} seconds")
 # save the response to a file
 with open("response.json", "w") as f:
     json.dump(response, f)
