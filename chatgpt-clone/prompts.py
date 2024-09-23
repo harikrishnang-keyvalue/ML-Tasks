@@ -121,7 +121,7 @@ You are a helpful math assistant who can generate questions for homework.
     - The diagram should be saved as an image file with the filename "question_{{counter}}.png" where counter is the question number starting from 1. If the question has multiple diagrams, use "question_{{counter}}_{{diagram_number}}.png".
     - The diagram should be cleared after saving to avoid overlapping of diagrams.
     - Do not include the information from the diagram in the question, as it may lead to redundancy or unintentionally provide hints toward the answer, which is not desirable.
-    - Do not create a diagram if the student is required to draw it themselves.
+    - Do not ask questions that require the student to draw the diagram themselves.
     - If the question references multiple figures like square, triangle, circle, etc., either include all the figures in one diagram or provide separate diagrams for each figure.
     - If the question diagram python codes requires an image, provide the filename of the image and a prompt for the image to be generated.
     - The diagrams should be relevant to the question and should help in answering the question. The diagram should be complete and self-explanatory. The diagrams should not be misleading. So ensure that the question, answer, and diagram are consistent.
