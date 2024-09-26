@@ -1,5 +1,5 @@
 from openai import OpenAI
-from typing import Optional
+from typing import Optional, Any
 import dotenv
 import json
 import os
@@ -11,6 +11,7 @@ def get_openai_response(
         prompt: str,
         model: str = "gpt-4o",
         image_urls: Optional[list[str]] = None,
+        response_format: Any = {"type": "json_object"},
 ):
     try:
         client = OpenAI(api_key=os.environ["OPENAI_API_KEY"],
@@ -37,7 +38,7 @@ def get_openai_response(
         response = client.chat.completions.create(
             model=model,
             messages=messages,
-            response_format={"type": "json_object"}
+            response_format=response_format,
         )
 
         content = response.choices[0].message.content
