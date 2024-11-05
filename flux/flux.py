@@ -24,6 +24,8 @@ def generate_image(seed: int, prompt: str):
         "width": 1024,
         "height": 1024,
         "prompt_upsampling": False,
+        "steps": 28,
+        "guidance": 3.5,
         "seed": seed,
     }
     print(f"payload: {payload}")
